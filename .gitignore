@@ -1,0 +1,18 @@
+# Dependências
+/node_modules
+/.pnp
+.pnp.js
+
+# Next.js
+/.next/
+/out/
+
+# Arquivos de Build
+/build
+/.vercel
+
+# Arquivos de Sistema e Zips (Lixo)
+.DS_Store
+*.pem
+*.zip
+*.log
