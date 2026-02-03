@@ -52,7 +52,7 @@ export function Header() {
             </Link>
           ))}
           <a
-            href="https://medium.com/@rafaelost"
+            href="https://rafaelmaciel.net/blog"
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center gap-1 text-sm font-medium text-zinc-900 dark:text-zinc-50 bg-zinc-100 dark:bg-zinc-800 px-4 py-2 rounded-full hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors"
@@ -82,7 +82,7 @@ export function Header() {
             </Link>
           ))}
           <a
-            href="https://medium.com/@rafaelost"
+            href="https://rafaelmaciel.net/blog"
             target="_blank"
             className="text-lg font-medium text-blue-600 dark:text-blue-400"
           >
