@@ -1,9 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  webpack: (config) => {
-    config.resolve.alias.canvas = false;
-    config.resolve.alias.encoding = false;
-    return config;
+  output: 'export',
+  // Necessário para hospedagem estática (cPanel/Apache/Nginx)
+  // pois não haverá um servidor Node.js para otimizar imagens em tempo real.
+  images: {
+    unoptimized: true,
   },
 };
 
