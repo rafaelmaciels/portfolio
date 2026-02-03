@@ -102,24 +102,22 @@ export function Hero() {
         </div>
 
         {/* Coluna da Imagem */}
-        <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            className="order-1 md:order-2 flex justify-center md:justify-end"
-        >
-            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-white dark:border-zinc-800 shadow-2xl overflow-hidden">
-                {/* Certifique-se que o arquivo profile.png ou .jpg está na pasta public */}
-                <Image 
-                    src="public/profile.jpg" 
-                    alt="Foto de Rafael Maciel"
-                    fill
-                    className="object-cover"
-                    priority
-                />
-            </div>
-        </motion.div>
-
+          <motion.div
+    initial={{ opacity: 0, scale: 0.9 }}
+    animate={{ opacity: 1, scale: 1 }}
+    transition={{ duration: 0.5 }}
+    className="order-1 md:order-2 flex justify-center md:justify-end"
+  >
+    <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-white dark:border-zinc-800 shadow-2xl overflow-hidden">
+      <Image 
+        src="/profile.jpg"   // ✅ correto, sem "public/"
+        alt="Foto de Rafael Maciel"
+        fill
+        className="object-cover"
+        priority
+      />
+    </div>
+  </motion.div>
       </div>
     </section>
   );
