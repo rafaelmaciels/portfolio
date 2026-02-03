@@ -111,7 +111,7 @@ export function Hero() {
             <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-white dark:border-zinc-800 shadow-2xl overflow-hidden">
                 {/* Certifique-se que o arquivo profile.png ou .jpg está na pasta public */}
                 <Image 
-                    src="/profile.jpg" 
+                    src="public/profile.jpg" 
                     alt="Foto de Rafael Maciel"
                     fill
                     className="object-cover"
