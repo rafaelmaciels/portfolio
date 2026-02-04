@@ -2,19 +2,34 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowDownToLine, ChevronRight, Mail, Linkedin, Github } from "lucide-react";
+import { ArrowDownToLine, ChevronRight, Mail, Linkedin, Github, Eye } from "lucide-react";
 import { DATA } from "@/lib/data";
 import Link from "next/link";
 import Image from "next/image";
 
 export function Hero() {
   const [index, setIndex] = useState(0);
+  const [visits, setVisits] = useState<number>(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
       setIndex((prevIndex) => (prevIndex + 1) % DATA.profile.headline.length);
     }, 3000);
     return () => clearInterval(timer);
+  }, []);
+
+  useEffect(() => {
+    async function fetchVisits() {
+      try {
+        // Utiliza a API countapi.xyz para incrementar e obter o número de visitas
+        const response = await fetch("https://api.countapi.xyz/hit/rafaelmaciels-portfolio/visits");
+        const data = await response.json();
+        setVisits(data.value);
+      } catch (error) {
+        console.error("Erro ao carregar contador de visitas:", error);
+      }
+    }
+    fetchVisits();
   }, []);
 
   return (
@@ -99,6 +114,18 @@ export function Hero() {
               <SocialLink href="https://github.com/rafaelmaciels" icon={<Github className="w-5 h-5" />} />
               <SocialLink href={`mailto:${DATA.profile.email}`} icon={<Mail className="w-5 h-5" />} />
            </div>
+
+           {visits > 0 && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 }}
+              className="mt-4 flex items-center gap-2 text-xs text-zinc-500 dark:text-zinc-400"
+            >
+              <Eye className="w-3.5 h-3.5" />
+              <span>{visits} visitas</span>
+            </motion.div>
+           )}
         </div>
 
         {/* Coluna da Imagem */}
@@ -110,7 +137,7 @@ export function Hero() {
 >
   <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-white dark:border-zinc-800 shadow-2xl overflow-hidden">
     <Image 
-      src="https://raw.githubusercontent.com/rafaelmaciels/portfolio/master/public/profile.jpg"
+      src="/profile.jpg"
       alt="Foto de Rafael Maciel"
       fill
       className="object-cover"
