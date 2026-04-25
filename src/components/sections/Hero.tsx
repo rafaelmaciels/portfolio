@@ -33,7 +33,7 @@ export function Hero() {
   }, []);
 
   return (
-    <section id="about" className="min-h-screen flex items-center justify-center pt-20 pb-12 px-6 md:px-12">
+    <section id="about" className="min-h-screen flex items-center justify-center px-6 pb-12 pt-28 md:px-12 md:pt-36">
       <div className="max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center">
         
         {/* Coluna de Texto */}
@@ -94,7 +94,7 @@ export function Hero() {
             className="flex flex-wrap gap-4 pt-2"
           >
             <a
-              href="/api/download-cv"
+              href="/curriculo"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-zinc-900 dark:bg-zinc-50 text-white dark:text-zinc-900 font-medium transition-all hover:bg-zinc-800 dark:hover:bg-zinc-200 active:scale-95 shadow-lg shadow-zinc-500/20"
             >
               <ArrowDownToLine className="w-4 h-4" />

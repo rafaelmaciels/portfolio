@@ -21,7 +21,7 @@ export interface Certificate {
   institution: string;
   date: string;
   category: "Tech" | "Gestão" | "Suporte" | "DevOps";
-  link?: string; // Campo opcional para links diretos
+  link?: string;
 }
 
 export const DATA = {
@@ -125,16 +125,16 @@ export const DATA = {
     {
       institution: "Universidade Estácio de Sá",
       course: "Graduação em Análise e Desenvolvimento de Sistemas",
-      period: "2020 - Trancado", 
+      period: "2020 - Trancado",
       status: "Graduação Tecnológica",
       specifics: [
-        { 
-          name: "Certificado: Programação para Internet", 
-          url: "https://certificado.estacio.br/c20137b20b9bf51b00f7bae" 
+        {
+          name: "Certificado: Programação para Internet",
+          url: "https://certificado.estacio.br/c20137b20b9bf51b00f7bae"
         },
-        { 
-          name: "Certificado: Algoritmos Escaláveis", 
-          url: "https://certificado.estacio.br/3adb359bb36d917c1a9229c" 
+        {
+          name: "Certificado: Algoritmos Escaláveis",
+          url: "https://certificado.estacio.br/3adb359bb36d917c1a9229c"
         }
       ]
     },
@@ -144,16 +144,15 @@ export const DATA = {
       period: "2024 - 2025",
       status: "Bootcamp Intensivo",
       specifics: [
-        { 
-          name: "Certificado Completo: Java, Spring & IA", 
-          url: "https://cursos.alura.com.br/program/certificate/a845c96c-f0d2-464d-a035-3f7e2105653b?lang" 
+        {
+          name: "Certificado Completo: Java, Spring & IA",
+          url: "https://cursos.alura.com.br/program/certificate/a845c96c-f0d2-464d-a035-3f7e2105653b?lang"
         }
       ]
     }
   ] as EducationItem[],
 
   certifications: [
-    // --- SPRING & API (Destaque Backend) ---
     {
       name: "Spring Boot 3: API Rest em Java",
       institution: "Alura",
@@ -178,7 +177,6 @@ export const DATA = {
       date: "2025",
       category: "Tech"
     },
-    // --- JAVA CORE ---
     {
       name: "Java: Consumindo API, arquivos e erros",
       institution: "Alura",
@@ -197,7 +195,6 @@ export const DATA = {
       date: "2025",
       category: "Tech"
     },
-    // --- DEVOPS & INFRA ---
     {
       name: "DevOps: Linux CLI e Scripts",
       institution: "Alura",
@@ -211,7 +208,6 @@ export const DATA = {
       date: "2025",
       category: "DevOps"
     },
-    // --- IA & PRODUTIVIDADE ---
     {
       name: "Spring AI: Integração com OpenAI",
       institution: "Alura",
@@ -224,10 +220,9 @@ export const DATA = {
       date: "2025",
       category: "Tech"
     },
-    // --- BASE & OUTROS ---
     {
       name: "Fundamentos do Gerenciamento de Projetos",
-      institution: "Instituição Certificadora", 
+      institution: "Instituição Certificadora",
       date: "2024",
       category: "Gestão"
     },

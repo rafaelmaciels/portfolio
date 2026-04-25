@@ -9,7 +9,6 @@ export function ModeToggle() {
   const { setTheme, theme } = useTheme();
   const [mounted, setMounted] = React.useState(false);
 
-  // Evita erro de hidratação (o servidor não sabe o tema do usuário)
   React.useEffect(() => {
     setMounted(true);
   }, []);
@@ -18,18 +17,14 @@ export function ModeToggle() {
 
   return (
     <motion.button
-      initial={{ opacity: 0, scale: 0.5 }}
+      initial={{ opacity: 0, scale: 0.7 }}
       animate={{ opacity: 1, scale: 1 }}
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="fixed top-6 right-6 z-50 p-3 rounded-full bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md border border-zinc-200 dark:border-zinc-800 shadow-lg text-zinc-800 dark:text-zinc-200 hover:scale-110 transition-transform"
+      className="inline-flex h-14 w-14 items-center justify-center rounded-full border border-zinc-200 bg-white/90 text-zinc-950 backdrop-blur-xl transition-all hover:scale-105 hover:bg-zinc-100 dark:border-white/10 dark:bg-white/6 dark:text-white dark:hover:bg-white/10"
       aria-label="Alternar tema"
     >
       <span className="sr-only">Alternar tema</span>
-      {theme === "dark" ? (
-        <Moon className="w-5 h-5" />
-      ) : (
-        <Sun className="w-5 h-5" />
-      )}
+      {theme === "dark" ? <Moon className="h-6 w-6" /> : <Sun className="h-6 w-6" />}
     </motion.button>
   );
 }

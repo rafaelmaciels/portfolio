@@ -37,7 +37,6 @@ export function Projects() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {loading ? (
-            // Skeleton Loading (enquanto carrega)
             Array.from({ length: 3 }).map((_, i) => (
               <div key={i} className="h-48 rounded-xl bg-zinc-200 dark:bg-zinc-800 animate-pulse" />
             ))
@@ -47,17 +46,17 @@ export function Projects() {
             ))
           )}
         </div>
-        
-        {/* Botão Ver Mais no GitHub */}
+
         <div className="mt-12 text-center">
-            <a 
-                href="https://github.com/rafaelmaciels" 
-                target="_blank" 
-                className="inline-flex items-center gap-2 text-sm font-medium text-zinc-600 hover:text-blue-600 dark:text-zinc-400 dark:hover:text-blue-400 transition-colors"
-            >
-                <Github className="w-4 h-4" />
-                Ver todos os repositórios
-            </a>
+          <a
+            href="https://github.com/rafaelmaciels"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-sm font-medium text-zinc-600 hover:text-blue-600 dark:text-zinc-400 dark:hover:text-blue-400 transition-colors"
+          >
+            <Github className="w-4 h-4" />
+            Ver todos os repositórios
+          </a>
         </div>
       </div>
     </section>
@@ -79,13 +78,25 @@ function ProjectCard({ repo, index }: { repo: Repo; index: number }) {
             <Code2 className="w-5 h-5" />
           </div>
           <div className="flex gap-3">
-             {repo.homepage && (
-                <a href={repo.homepage} target="_blank" aria-label="Demo" className="text-zinc-400 hover:text-blue-600 transition-colors">
-                    <ExternalLink className="w-5 h-5" />
-                </a>
-             )}
-             <a href={repo.html_url} target="_blank" aria-label="GitHub Repo" className="text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">
-                <Github className="w-5 h-5" />
+            {repo.homepage && (
+              <a
+                href={repo.homepage}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Demo"
+                className="text-zinc-400 hover:text-blue-600 transition-colors"
+              >
+                <ExternalLink className="w-5 h-5" />
+              </a>
+            )}
+            <a
+              href={repo.html_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub Repo"
+              className="text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+            >
+              <Github className="w-5 h-5" />
             </a>
           </div>
         </div>
@@ -100,14 +111,14 @@ function ProjectCard({ repo, index }: { repo: Repo; index: number }) {
 
       <div className="flex items-center justify-between mt-4 pt-4 border-t border-zinc-100 dark:border-zinc-900 text-xs font-medium text-zinc-500">
         <span className="flex items-center gap-1.5">
-            <span className="w-2 h-2 rounded-full bg-blue-500" />
-            {repo.language || "Código"}
+          <span className="w-2 h-2 rounded-full bg-blue-500" />
+          {repo.language || "Código"}
         </span>
         {repo.stargazers_count > 0 && (
-            <span className="flex items-center gap-1">
-                <Star className="w-3 h-3 text-yellow-500" />
-                {repo.stargazers_count}
-            </span>
+          <span className="flex items-center gap-1">
+            <Star className="w-3 h-3 text-yellow-500" />
+            {repo.stargazers_count}
+          </span>
         )}
       </div>
     </motion.div>

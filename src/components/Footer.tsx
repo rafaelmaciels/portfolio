@@ -10,7 +10,6 @@ import {
   BarChart3
 } from "lucide-react";
 import { DATA } from "@/lib/data";
-import { VisitorCounter } from "@/components/VisitorCounter";
 
 export function Footer() {
   return (
@@ -81,7 +80,6 @@ export function Footer() {
           <p>
             Construído com <span className="text-zinc-600 dark:text-zinc-300 font-medium">Next.js</span> e <span className="text-zinc-600 dark:text-zinc-300 font-medium">Tailwind CSS</span>.
           </p>
-          <VisitorCounter />
         </div>
       </div>
     </footer>
